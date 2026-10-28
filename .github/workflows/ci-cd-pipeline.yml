@@ -26,3 +26,17 @@ jobs:
 
       - name: Executar testes
         run: npm test
+
+  deploy-simulado:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Iniciar simulacao
+        run: echo "Iniciando deploy simulado..."
+
+      - name: Simular publicacao
+        run: echo "Aplicacao publicada no ambiente de simulacao!"
+
+      - name: Finalizar
+        run: echo "Deploy simulado concluido com sucesso!"
